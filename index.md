@@ -1,37 +1,238 @@
-## Welcome to GitHub Pages
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>给你的一封信</title>	    
+        <link type="text/css" rel="stylesheet" href="./file/default.css">
+		<script type="text/javascript" src="./file/jquery.min.js"></script>
+		<script type="text/javascript" src="./file/jscex.min.js"></script>
+		<script type="text/javascript" src="./file/jscex-parser.js"></script>
+		<script type="text/javascript" src="./file/jscex-jit.js"></script>
+		<script type="text/javascript" src="./file/jscex-builderbase.min.js"></script>
+		<script type="text/javascript" src="./file/jscex-async.min.js"></script>
+		<script type="text/javascript" src="./file/jscex-async-powerpack.min.js"></script>
+		<script type="text/javascript" src="./file/functions.js" charset="utf-8"></script>
+		<script type="text/javascript" src="./file/love.js" charset="utf-8"></script>
+	    <style type="text/css">
+        </style>
+</head>
+    <body>
+        <script type="text/javascript">         
+        var date1= '2018/09/22 20:11:00';  //开始时间
+        var date2 = new Date();    //结束时间
+        var date3 = date2.getTime() - new Date(date1).getTime();   //时间差的毫秒数      
+ 
+        //------------------------------
+ 
+        //计算出相差天数
+        var days=Math.floor(date3/(24*3600*1000))
+ 
+        //计算出小时数
+ 
+        var leave1=date3%(24*3600*1000)    //计算天数后剩余的毫秒数
+        var hours=Math.floor(leave1/(3600*1000))
+        //计算相差分钟数
+        var leave2=leave1%(3600*1000)        //计算小时数后剩余的毫秒数
+        var minutes=Math.floor(leave2/(60*1000))
+        //计算相差秒数
+        var leave3=leave2%(60*1000)      //计算分钟数后剩余的毫秒数
+        var seconds=Math.round(leave3/1000)
+        alert(" 于二傻，距离我们在一起已经 "+days+"天 "+hours+"小时 "+minutes+" 分钟"+seconds+" 秒了哦！")
+    </script>
 
-You can use the [editor on GitHub](https://github.com/zyx00000/yvcong/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+        <div id="main">
+            <div id="error">本页面采用HTML5编辑，目前您的浏览器无法显示，请换成谷歌(<a href="http://www.google.cn/chrome/intl/zh-CN/landing_chrome.html?hl=zh-CN&brand=CHMI">Chrome</a>)或者火狐(<a href="http://firefox.com.cn/download/">Firefox</a>)浏览器，或者其他游览器的最新版本。</div>
+            <audio autoplay="autoplay" height="100" width="100">
+                    <source src="renxi.mp3" type="audio/mp3" />
+                    <embed height="100" width="100" src="renxi.mp3" />
+            </audio>
+            <div id="wrap">
+                <div id="text">
+                    <div id="code"> <font color="#FF0000"> <span class="say">亲爱的于二傻，我爱你</span><br>
+                      <span class="say"> 我知道我很任性，</span><br>
+                      <span class="say"> 但是我喜欢和你发小脾气</span><br>
+                      <span class="say">你说我小孩子气，</span><br>             
+                          <span class="say"> 不过我本来就还小嘛</span><br>
+                      <span class="say">我害怕失去</span><br>
+                      <span class="say">但我更怕失去你</span><br>
+                      <span class="say">希望可以执子之手，与子偕老</span><br>
+                      <span class="say">如果上天让我许三个愿望，</span><br>
+                              <span class="say">第一个是今生今世和你在一起， </span><br>
+                           <span class="say"> 第二个是再生再世和你在一起，</span><br>
+                           <span class="say">第三个是永生永世和你不分离 </span><br>
+                      <span class="say"><span class="space"></span> -- 爱你的老公</span> </font>
+                          <br />
+                          <br />
+                      </p>
+                    </div>
+                  </div>
+                <div id="clock-box">
+                    <span class="STYLE1"></span><font color="#33CC00">亲爱的，我喜欢你</font>
+<span class="STYLE1">已经是……</span>
+                  <div id="clock"></div>
+              </div>
+                <canvas id="canvas" width="1100" height="680"></canvas>
+            </div>
+            
+        </div>
+    
+    <script>
+    </script>
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+    <script>
+    (function(){
+        var canvas = $('#canvas');
+		
+        if (!canvas[0].getContext) {
+            $("#error").show();
+            return false;        }
 
-### Markdown
+        var width = canvas.width();
+        var height = canvas.height();        
+        canvas.attr("width", width);
+        canvas.attr("height", height);
+        var opts = {
+            seed: {
+                x: width / 2 - 20,
+                color: "rgb(190, 26, 37)",
+                scale: 2
+            },
+            branch: [
+                [535, 680, 570, 250, 500, 200, 30, 100, [
+                    [540, 500, 455, 417, 340, 400, 13, 100, [
+                        [450, 435, 434, 430, 394, 395, 2, 40]
+                    ]],
+                    [550, 445, 600, 356, 680, 345, 12, 100, [
+                        [578, 400, 648, 409, 661, 426, 3, 80]
+                    ]],
+                    [539, 281, 537, 248, 534, 217, 3, 40],
+                    [546, 397, 413, 247, 328, 244, 9, 80, [
+                        [427, 286, 383, 253, 371, 205, 2, 40],
+                        [498, 345, 435, 315, 395, 330, 4, 60]
+                    ]],
+                    [546, 357, 608, 252, 678, 221, 6, 100, [
+                        [590, 293, 646, 277, 648, 271, 2, 80]
+                    ]]
+                ]] 
+            ],
+            bloom: {
+                num: 700,
+                width: 1080,
+                height: 650,
+            },
+            footer: {
+                width: 1200,
+                height: 5,
+                speed: 10,
+            }
+        }
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+        var tree = new Tree(canvas[0], width, height, opts);
+        var seed = tree.seed;
+        var foot = tree.footer;
+        var hold = 1;
 
-```markdown
-Syntax highlighted code block
+        canvas.click(function(e) {
+            var offset = canvas.offset(), x, y;
+            x = e.pageX - offset.left;
+            y = e.pageY - offset.top;
+            if (seed.hover(x, y)) {
+                hold = 0; 
+                canvas.unbind("click");
+                canvas.unbind("mousemove");
+                canvas.removeClass('hand');
+            }
+        }).mousemove(function(e){
+            var offset = canvas.offset(), x, y;
+            x = e.pageX - offset.left;
+            y = e.pageY - offset.top;
+            canvas.toggleClass('hand', seed.hover(x, y));
+        });
 
-# Header 1
-## Header 2
-### Header 3
+        var seedAnimate = eval(Jscex.compile("async", function () {
+            seed.draw();
+            while (hold) {
+                $await(Jscex.Async.sleep(10));
+            }
+            while (seed.canScale()) {
+                seed.scale(0.95);
+                $await(Jscex.Async.sleep(10));
+            }
+            while (seed.canMove()) {
+                seed.move(0, 2);
+                foot.draw();
+                $await(Jscex.Async.sleep(10));
+            }
+        }));
 
-- Bulleted
-- List
+        var growAnimate = eval(Jscex.compile("async", function () {
+            do {
+    	        tree.grow();
+                $await(Jscex.Async.sleep(10));
+            } while (tree.canGrow());
+        }));
 
-1. Numbered
-2. List
+        var flowAnimate = eval(Jscex.compile("async", function () {
+            do {
+    	        tree.flower(2);
+                $await(Jscex.Async.sleep(10));
+            } while (tree.canFlower());
+        }));
 
-**Bold** and _Italic_ and `Code` text
+        var moveAnimate = eval(Jscex.compile("async", function () {
+            tree.snapshot("p1", 240, 0, 610, 680);
+            while (tree.move("p1", 500, 0)) {
+                foot.draw();
+                $await(Jscex.Async.sleep(10));
+            }
+            foot.draw();
+            tree.snapshot("p2", 500, 0, 610, 680);
 
-[Link](url) and ![Image](src)
-```
+            // 会有闪烁不得意这样做, (＞﹏＜)
+            canvas.parent().css("background", "url(" + tree.toDataURL('image/png') + ")");
+            canvas.css("background", "#ffe");
+            $await(Jscex.Async.sleep(300));
+            canvas.css("background", "none");
+        }));
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+        var jumpAnimate = eval(Jscex.compile("async", function () {
+            var ctx = tree.ctx;
+            while (true) {
+                tree.ctx.clearRect(0, 0, width, height);
+                tree.jump();
+                foot.draw();
+                $await(Jscex.Async.sleep(25));
+            }
+        }));
 
-### Jekyll Themes
+        var textAnimate = eval(Jscex.compile("async", function () {
+		    var together = new Date();
+		    together.setFullYear(2010,1 , 15); 			//时间年月日
+		    together.setHours(16);						//小时	
+		    together.setMinutes(53);					//分钟
+		    together.setSeconds(0);					//秒前一位
+		    together.setMilliseconds(2);				//秒第二位
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/zyx00000/yvcong/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+		    $("#code").show().typewriter();
+            $("#clock-box").fadeIn(500);
+            while (true) {
+                timeElapse(together);
+                $await(Jscex.Async.sleep(1000));
+            }
+        }));
 
-### Support or Contact
+        var runAsync = eval(Jscex.compile("async", function () {
+            $await(seedAnimate());
+            $await(growAnimate());
+            $await(flowAnimate());
+            $await(moveAnimate());
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+            textAnimate().start();
+
+            $await(jumpAnimate());
+        }));
+
+        runAsync().start();
+    })();
+    </script>
+
+  </body> 
+    </html>
