@@ -3410,29 +3410,6 @@ function timeElapse(date){
         </style>
 </head>
     <body>
-        <script type="text/javascript">         
-        var date1= '2018/09/22 20:11:00';  //开始时间
-        var date2 = new Date();    //结束时间
-        var date3 = date2.getTime() - new Date(date1).getTime();   //时间差的毫秒数      
- 
-        //------------------------------
- 
-        //计算出相差天数
-        var days=Math.floor(date3/(24*3600*1000))
- 
-        //计算出小时数
- 
-        var leave1=date3%(24*3600*1000)    //计算天数后剩余的毫秒数
-        var hours=Math.floor(leave1/(3600*1000))
-        //计算相差分钟数
-        var leave2=leave1%(3600*1000)        //计算小时数后剩余的毫秒数
-        var minutes=Math.floor(leave2/(60*1000))
-        //计算相差秒数
-        var leave3=leave2%(60*1000)      //计算分钟数后剩余的毫秒数
-        var seconds=Math.round(leave3/1000)
-        alert(" 于二傻，距离我们在一起已经 "+days+"天 "+hours+"小时 "+minutes+" 分钟"+seconds+" 秒了哦！")
-    </script>
-
         <div id="main">
             <div id="error">本页面采用HTML5编辑，目前您的浏览器无法显示，请换成谷歌(<a href="http://www.google.cn/chrome/intl/zh-CN/landing_chrome.html?hl=zh-CN&brand=CHMI">Chrome</a>)或者火狐(<a href="http://firefox.com.cn/download/">Firefox</a>)浏览器，或者其他游览器的最新版本。</div>
             <audio autoplay="autoplay" height="100" width="100">
@@ -3600,9 +3577,9 @@ function timeElapse(date){
 
         var textAnimate = eval(Jscex.compile("async", function () {
 		    var together = new Date();
-		    together.setFullYear(2010,1 , 15); 			//时间年月日
-		    together.setHours(16);						//小时	
-		    together.setMinutes(53);					//分钟
+		    together.setFullYear(2018,9 , 22); 			//时间年月日
+		    together.setHours(20);						//小时	
+		    together.setMinutes(11);					//分钟
 		    together.setSeconds(0);					//秒前一位
 		    together.setMilliseconds(2);				//秒第二位
 
